@@ -1,16 +1,15 @@
-import { Inter } from "next/font/google";
-import Script from "next/script"; // Для подключения аналитики
+// import { Inter } from "next/font/google";  <-- УБРАЛИ (чтобы не было ошибки ETIMEDOUT)
+import Script from "next/script"; 
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  display: "swap",
-});
+// const inter = Inter({              <-- УБРАЛИ настройку шрифта
+//   subsets: ["latin", "cyrillic"],
+//   display: "swap",
+// });
 
 export const metadata = {
   metadataBase: new URL("https://v-experto.ru"),
 
-  // 👇 Сюда вставь код из Google Search Console (из пункта "Тег HTML"), если еще не вставил
   verification: {
     google: "ЗДЕСЬ_ТВОЙ_КОД_ИЗ_GOOGLE_HTML_TAG",
   },
@@ -20,7 +19,6 @@ export const metadata = {
     template: "%s | ВАШ Эксперт",
   },
 
-  // 👇 Обновили описание под требования заказчицы (добавили ООО)
   description:
     "Официальная оценка недвижимости, транспорта и бизнеса. ООО «ВАШ Эксперт». Отчеты для нотариуса, опеки и суда. Иваново, пр. Ленина, 34. Тел: +7 (920) 671-00-91",
 
@@ -54,7 +52,6 @@ export const metadata = {
     canonical: "https://v-experto.ru",
   },
 
-  // 👇 ДОБАВЛЕНО: Иконка сайта (favicon)
   icons: {
     icon: "https://v-experto.ru/favicon.ico",
   },
@@ -69,7 +66,8 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+      {/* Убрали ${inter.className}, оставили только antialiased */}
+      <body className="antialiased">
         {/* Яндекс.Метрика */}
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`

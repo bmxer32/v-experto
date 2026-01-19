@@ -1,4 +1,4 @@
-// 👇 ЭТА СТРОКА РЕШАЕТ ПРОБЛЕМУ
+// 👇 ЭТА СТРОКА РЕШАЕТ 
 export const dynamic = 'force-static';
 
 export default function robots() {
