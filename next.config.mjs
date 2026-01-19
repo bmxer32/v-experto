@@ -1,15 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
-  // Картинки нужно оптимизировать иначе, так как на статике нет сервера
-  images: {
-    unoptimized: true,
-  },
-
-  // Твой старый код (оставляем, раз был)
+  // 👇 Этот блок заставит Next.js выключить Turbopack и использовать Webpack
   webpack: (config) => {
     return config;
   },
 };
 
-export default nextConfig;  
+export default nextConfig;
